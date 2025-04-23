@@ -130,3 +130,6 @@ FROM product_emissions pe;
 |Total number of products|Number of unique products|
 |------------------------|-------------------------|
 |1037|661|
+
+## 3. Data Analysis
+### 3.1 Which products contribute the most to carbon emissions?

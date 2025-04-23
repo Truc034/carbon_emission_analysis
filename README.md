@@ -8,4 +8,5 @@ Carbon emissions play a crucial role in the environment, accounting for over 75%
 Through this analysis, we hope to gain an understanding of the environmental impact of different industries and contribute to making informed decisions in sustainable development.
 
 ![image](https://github.com/user-attachments/assets/8c53ff49-dd3e-4afd-b681-394fc6801007)
+
 Photo by Chris LeBoutillier (unsplash.com)

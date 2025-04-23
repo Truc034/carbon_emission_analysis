@@ -153,3 +153,99 @@ LIMIT 10
 |Mercedes-Benz GLE (GLE 500 4MATIC)|91000.00|
 |Mercedes-Benz S-Class (S 500)|85000.00|
 |Mercedes-Benz SL (SL 350)|72000.00|
+
+
+### 3.2 What are the industry groups of these products?
+```sql
+SELECT ig.industry_group, 
+	   pe. product_name,
+	   ROUND(AVG(pe.carbon_footprint_pcf),2) AS 'Average PCF'
+FROM product_emissions pe
+JOIN industry_groups ig ON ig.id = pe.industry_group_id
+GROUP BY product_name
+ORDER BY carbon_footprint_pcf DESC 
+LIMIT 10
+```
+|industry_group|product_name|Average PCF|
+|--------------|------------|-----------|
+|Electrical Equipment and Machinery|Wind Turbine G128 5 Megawats|3718044.00|
+|Electrical Equipment and Machinery|Wind Turbine G132 5 Megawats|3276187.00|
+|Electrical Equipment and Machinery|Wind Turbine G114 2 Megawats|1532608.00|
+|Electrical Equipment and Machinery|Wind Turbine G90 2 Megawats|1251625.00|
+|Automobiles & Components|Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV def unit.|191687.00|
+|Materials|Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall|167000.00|
+|Materials|TCDE|99075.00|
+|Automobiles & Components|Mercedes-Benz GLE (GLE 500 4MATIC)|91000.00|
+|Automobiles & Components|Mercedes-Benz S-Class (S 500)|85000.00|
+|Automobiles & Components|Mercedes-Benz SL (SL 350)|72000.00|
+
+### 3.3 What are the industries with the highest contribution to carbon emissions?
+```sql
+SELECT ig.industry_group, 
+       ROUND(SUM(pe.carbon_footprint_pcf),2) AS 'Total PCF'
+FROM product_emissions pe
+JOIN industry_groups ig ON ig.id = pe.industry_group_id
+GROUP BY ig.industry_group
+ORDER BY ROUND(SUM(pe.carbon_footprint_pcf),2) DESC 
+LIMIT 10
+```
+|industry_group|Total PCF|
+|--------------|---------|
+|Electrical Equipment and Machinery|9801558.00|
+|Automobiles & Components|2582264.00|
+|Materials|577595.00|
+|Technology Hardware & Equipment|363776.00|
+|Capital Goods|258712.00|
+|"Food, Beverage & Tobacco"|111131.00|
+|"Pharmaceuticals, Biotechnology & Life Sciences"|72486.00|
+|Chemicals|62369.00|
+|Software & Services|46544.00|
+|Media|23017.00|
+
+### 3.4 What are the companies with the highest contribution to carbon emissions?
+```sql
+SELECT c.company_name,  
+       ROUND(SUM(pe.carbon_footprint_pcf),2) AS 'Total PCF'
+FROM product_emissions pe
+JOIN companies c ON c.id = pe.company_id
+GROUP BY c.company_name
+ORDER BY ROUND(SUM(pe.carbon_footprint_pcf),2) DESC 
+LIMIT 10
+```
+|company_name|Total PCF|
+|------------|---------|
+|"Gamesa Corporación Tecnológica, S.A."|9778464.00|
+|Daimler AG|1594300.00|
+|Volkswagen AG|655960.00|
+|"Mitsubishi Gas Chemical Company, Inc."|212016.00|
+|"Hino Motors, Ltd."|191687.00|
+|Arcelor Mittal|167007.00|
+|Weg S/A|160655.00|
+|General Motors Company|137007.00|
+|"Lexmark International, Inc."|132012.00|
+|"Daikin Industries, Ltd."|105600.00|
+
+### 3.5 What are the countries with the highest contribution to carbon emissions?
+```sql
+SELECT co.country_name, 
+		ROUND(SUM(pe.carbon_footprint_pcf),2) AS 'Total PCF'
+FROM product_emissions pe
+JOIN countries co ON co.id = pe.country_id
+GROUP BY co.country_name
+ORDER BY ROUND(SUM(pe.carbon_footprint_pcf),2) DESC 
+LIMIT 10
+```
+|country_name|Total PCF|
+|------------|---------|
+|Spain|9786130.00|
+|Germany|2251225.00|
+|Japan|653237.00|
+|USA|518381.00|
+|South Korea|186965.00|
+|Brazil|169337.00|
+|Luxembourg|167007.00|
+|Netherlands|70417.00|
+|Taiwan|62875.00|
+|India|24574.00|
+
+### 3.6 What is the trend of carbon footprints (PCFs) over the years?

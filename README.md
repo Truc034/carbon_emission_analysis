@@ -154,7 +154,15 @@ LIMIT 10
 |Mercedes-Benz S-Class (S 500)|85000.00|
 |Mercedes-Benz SL (SL 350)|72000.00|
 
-
+**Answer:**
++ The top 4 products with the highest average PCF are wind turbines due to manufacturing, transportation, and installation but wind energy is considered clean.
+=> High PCF doesn't mean poor environmental performance if the product offsets emissions over time.
++ Automobiles: Vehicles like the Land Cruiser Prado and Mercedes-Benz models show PCFs between 70,000–190,000.
+=> More luxury or heavy models have higher emissions due to materials and production complexity.
++ Industrial Infrastructure: The retaining wall structure with steel sheet piles also ranks high, energy-intensive to produce.
+=> Heavy construction materials are major emission contributors.
+++ General Trend: Heavy industrial products > Vehicles > Light infrastructure or components in terms of PCF.
+  
 ### 3.2 What are the industry groups of these products?
 ```sql
 SELECT ig.industry_group, 

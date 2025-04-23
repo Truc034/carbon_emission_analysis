@@ -161,7 +161,7 @@ LIMIT 10
 => More luxury or heavy models have higher emissions due to materials and production complexity.
 + Industrial Infrastructure: The retaining wall structure with steel sheet piles also ranks high, energy-intensive to produce.
 => Heavy construction materials are major emission contributors.
-++ General Trend: Heavy industrial products > Vehicles > Light infrastructure or components in terms of PCF.
+* General Trend: Heavy industrial products > Vehicles > Light infrastructure or components in terms of PCF.
   
 ### 3.2 What are the industry groups of these products?
 ```sql

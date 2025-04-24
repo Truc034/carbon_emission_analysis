@@ -161,7 +161,6 @@ LIMIT 10
 => More luxury or heavy models have higher emissions due to materials and production complexity.
 + Industrial Infrastructure: The retaining wall structure with steel sheet piles also ranks high, energy-intensive to produce.
 => Heavy construction materials are major emission contributors.
-* General Trend: Heavy industrial products > Vehicles > Light infrastructure or components in terms of PCF.
   
 ### 3.2 What are the industry groups of these products?
 ```sql
@@ -187,6 +186,11 @@ LIMIT 10
 |Automobiles & Components|Mercedes-Benz S-Class (S 500)|85000.00|
 |Automobiles & Components|Mercedes-Benz SL (SL 350)|72000.00|
 
+**Answer:**
++ Electrical Equipment and Machinery
++ Automobiles & Components
++ Materials
+
 ### 3.3 What are the industries with the highest contribution to carbon emissions?
 ```sql
 SELECT ig.industry_group, 
@@ -209,6 +213,17 @@ LIMIT 10
 |Chemicals|62369.00|
 |Software & Services|46544.00|
 |Media|23017.00|
+
+![image](https://github.com/user-attachments/assets/98aec9cb-717d-4139-8e4f-0fa84cf621f6)
+
+**Answer:**
++ Top 1: Electrical Equipment and Machinery
+=> This industry group accounts for a massive share of total emissions — nearly 10 million PCF — due to large, energy-intensive products like wind turbines. Even though these are part of renewable energy infrastructure, their production still has a high environmental cost.
++ Top 2: Automobiles & Components, represents 4 out of the top 10 emission-heavy products.
+=> This industry is a major carbon contributor.
++ Top 3: Materials
+=> Reflects the carbon intensity of raw material extraction and processing, which is often upstream in value chains.
+* General Trend: Heavy industrial products > Vehicles > Light infrastructure or components in terms of PCF.
 
 ### 3.4 What are the companies with the highest contribution to carbon emissions?
 ```sql

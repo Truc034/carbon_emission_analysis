@@ -214,7 +214,7 @@ LIMIT 10
 |Software & Services|46544.00|
 |Media|23017.00|
 
-![image](https://github.com/user-attachments/assets/98aec9cb-717d-4139-8e4f-0fa84cf621f6)
+![image](https://github.com/user-attachments/assets/03fa22e6-81d6-40fe-886e-013a4cdf0c91)
 
 **Answer:**
 + Top 1: Electrical Equipment and Machinery

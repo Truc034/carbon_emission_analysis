@@ -1,4 +1,4 @@
-# Carbon_Emission_Analysis
+![image](https://github.com/user-attachments/assets/1331ae06-844f-44c5-a24c-198b536071cc)# Carbon_Emission_Analysis
 
 ## 1. Introduction
 This report aims to analyze carbon emissions to examine the carbon footprint across various industries. We aim to identify sectors with the highest levels of emissions by analyzing them across countries and years, as well as to uncover trends.
@@ -124,7 +124,7 @@ LIMIT 10
 **Duplicate result**
 ```sql
 SELECT COUNT(product_name) AS 'Total number of products',
-		COUNT(DISTINCT product_name) as 'Number of unique products'
+       COUNT(DISTINCT product_name) as 'Number of unique products'
 FROM product_emissions pe;
 ```
 |Total number of products|Number of unique products|
@@ -135,7 +135,7 @@ FROM product_emissions pe;
 ### 3.1 Which products contribute the most to carbon emissions?
 ```sql
 SELECT product_name,
-		ROUND(AVG(carbon_footprint_pcf),2) AS 'Average PCF'
+       ROUND(AVG(carbon_footprint_pcf),2) AS 'Average PCF'
 FROM product_emissions pe 
 GROUP BY pe.product_name
 ORDER BY carbon_footprint_pcf DESC 
@@ -165,8 +165,8 @@ LIMIT 10
 ### 3.2 What are the industry groups of these products?
 ```sql
 SELECT ig.industry_group, 
-	   pe. product_name,
-	   ROUND(AVG(pe.carbon_footprint_pcf),2) AS 'Average PCF'
+       pe. product_name,
+       ROUND(AVG(pe.carbon_footprint_pcf),2) AS 'Average PCF'
 FROM product_emissions pe
 JOIN industry_groups ig ON ig.id = pe.industry_group_id
 GROUP BY product_name
@@ -248,10 +248,17 @@ LIMIT 10
 |"Lexmark International, Inc."|132012.00|
 |"Daikin Industries, Ltd."|105600.00|
 
+![image](https://github.com/user-attachments/assets/17788108-b55d-4edd-9794-a0f66619863b)
+
+**Answer:**
++ Gamesa is the largest contributor, Gamesa alone accounts for ~86% of the total emissions in this top 10 list,  likely due to wind turbine manufacturing
++ Daimler, Volkswagen, Hino, and General Motors, all automotive companies dominate the rest of the list
++ Arcelor Mittal (steel), Mitsubishi Gas Chemical, and Daikin (HVAC systems) are examples of heavy industry or manufacturing sectors with high emissions per product. Lexmark (printing) also appears, showing how even office equipment can accumulate notable emissions.
+  
 ### 3.5 What are the countries with the highest contribution to carbon emissions?
 ```sql
 SELECT co.country_name, 
-		ROUND(SUM(pe.carbon_footprint_pcf),2) AS 'Total PCF'
+       ROUND(SUM(pe.carbon_footprint_pcf),2) AS 'Total PCF'
 FROM product_emissions pe
 JOIN countries co ON co.id = pe.country_id
 GROUP BY co.country_name
@@ -271,6 +278,13 @@ LIMIT 10
 |Taiwan|62875.00|
 |India|24574.00|
 
+![image](https://github.com/user-attachments/assets/1c4d2769-13a8-486e-a7fc-88b0f0febc73)
+
+**Answer:**
++ Spain dominates the list, more than 4x higher than Germany’s, the second-highest, because Gamesa’s manufacturing is based in Spain, and their wind turbines account for most of the emissions here.
++ Germany, Japan, and the USA form a strong middle tier, likely associated with emissions from automotive, electronics, and chemical manufacturing.
++ South Korea, Brazil, and Luxembourg have smaller but significant PCFs, these might reflect operations from Daikin, Weg S/A, or Arcelor Mittal.
+
 ### 3.6 What is the trend of carbon footprints (PCFs) over the years?
 ```sql
 SELECT 
@@ -286,6 +300,14 @@ GROUP BY year
 | 2015 | 43188.90    | 
 | 2016 | 6891.52     | 
 | 2017 | 4050.85     | 
+
+![image](https://github.com/user-attachments/assets/789ba4fc-d71b-4247-b81a-069306900edb)
+
+**Answer:**
++ 2013 - 2014: Stable emissions, suggesting similar product and manufacturing types.
++ 2015 at peak: Greatly increase, possibly due to inclusion of high-impact industrial products (e.g., wind turbines, construction structures).
++ 2016 – 2017 decline: maybe because fewer high-emission products were logged or companies improved efficiency and emission-reducing strategies.
++ The trend shows progress toward lower emissions per product on average after 2015.
 
 ### 3.7 Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
 ```sql
@@ -338,3 +360,5 @@ ORDER BY
 |Technology Hardware & Equipment|61100.00|167361.00|106157.00|1566.00|27592.00|
 |Capital Goods|60190.00|93699.00|3505.00|6369.00|94949.00|
 |Materials|200513.00|75678.00|0.00|88267.00|213137.00|
+
+![image](https://github.com/user-attachments/assets/94c5dbc8-db65-4f7c-8c04-ec27c4c03bc1)

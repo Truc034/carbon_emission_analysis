@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/1331ae06-844f-44c5-a24c-198b536071cc)# Carbon_Emission_Analysis
+# Carbon_Emission_Analysis
 
 ## 1. Introduction
 This report aims to analyze carbon emissions to examine the carbon footprint across various industries. We aim to identify sectors with the highest levels of emissions by analyzing them across countries and years, as well as to uncover trends.

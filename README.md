@@ -368,5 +368,5 @@ ORDER BY
 + Industries show a notable decrease over time
   * Software & Services and Commercial & Professional Services: Mild downward trend over time, still active but showing progress.
   * Media: Steady decline from ~9.6k in 2013 to 1808 in 2016.
-=>This could indicate successful emission reduction through innovation or less product data available in later years.
+- This could indicate successful emission reduction through innovation or less product data available in later years.
 

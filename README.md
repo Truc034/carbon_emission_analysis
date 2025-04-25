@@ -361,4 +361,12 @@ ORDER BY
 |Capital Goods|60190.00|93699.00|3505.00|6369.00|94949.00|
 |Materials|200513.00|75678.00|0.00|88267.00|213137.00|
 
-![image](https://github.com/user-attachments/assets/94c5dbc8-db65-4f7c-8c04-ec27c4c03bc1)
+![image](https://github.com/user-attachments/assets/aebc0f85-d5f5-4a2a-8cd9-7974fe8e714e)
+
+**Answer:**
++ Industries show spikes in emissions for only one year: Electrical Equipment and Machinery had an enormous spike in 2015 (~9.8 million), Chemicals also peaked in 2015 (~62k) and no data in other years  likely influenced by specific events or products - they're likely influenced by specific events or outlier product.
++ Industries show a notable decrease over time
+  * Software & Services and Commercial & Professional Services: Mild downward trend over time, still active but showing progress.
+  * Media: Steady decline from ~9.6k in 2013 to 1808 in 2016.
+=> this could indicate successful emission reduction through innovation or less product data available in later years.
+
